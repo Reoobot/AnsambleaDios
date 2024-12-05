@@ -96,7 +96,7 @@ function displayPodcasts(data) {
 fetchPodcasts();
 function playAudio() {
     console.log('Botón de reproducción clickeado');
-    const audio = new Audio('https://passion-unable-condition-mesh.trycloudflare.com/stream'); // Reemplaza con la URL de tu audio
+    const audio = new Audio('https://explorer-stories-promoting-wn.trycloudflare.com/stream'); // Reemplaza con la URL de tu audio
     audio.play().then(() => {
         console.log('Reproducción de audio iniciada');
     }).catch((error) => {
