@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Podcasts</title>
+    <link rel="stylesheet" href="styless.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Programas de Podcasts</h1>
+    </header>
+    <main class="main-container"><!DOCTYPE html>
+        <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="style.css">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+            <title>Navbar Responsive</title>
+        
+        </head>
+        <body>
+            <nav class="navbar">
+                <div class="logo"><img src="Group 8.svg" alt=""></div>
+                <div class="menu-toggle" id="menu-toggle">☰</div>
+                <ul id="nav-links">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Acerca de</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+             <!-- Icon bar -->
+             <div class="icon-bar">
+                <a href="" target="_blank" class="whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="" target="_blank" class="facebook" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="post.html"  class="podcastt" aria-label="Podcast"><i class="fas fa-podcast"></i></a>
+                <a href="" target="_blank" class="youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="" target="_blank" class="bible" aria-label="Biblia"><i class="fas fa-book-bible"></i></a>
+            </div>
+        
+            <!-- Main content -->
+        
+            <main class="main-container">
+                <div class="carousel-container">
+                    <div id="carousel" class="carousel">
+                        <!-- Carrusel dinámico -->
+                    </div>
+                </div>
+            </main>
+        
+            
+            <div class="content">
+                    <!-- Dates Icon -->
+                    <div class="dates-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="play-button" data-audio-src="https://reoobot.github.io/RadiOline/La%20bendici%C3%B3n%20%E2%94%82%20Elevation%20Worship%20(COVER)%20Espa%C3%B1ol%20BetEl%20al%20Mundo%20e%20invitados.mp3" onclick="playAudio()">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="play-button" data-audio-src="https://reoobot.github.io/RadiOline/La%20bendici%C3%B3n%20%E2%94%82%20Elevation%20Worship%20(COVER)%20Espa%C3%B1ol%20BetEl%20al%20Mundo%20e%20invitados.mp3" onclick="playAudio()">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    
+                    <div class="live-icon">EN VIVO</div>
+                </div>
+               
+            </div>
+           
+            <div class="container">
+                <h1>Lista de Podcasts</h1>
+                <div id="podcast-list">Cargando podcasts...</div>
+            </div>
+            <h1 class="mas"><a href="post.html">Más capitulos de podcasts</a></h1>
+        
+            
+            
+           
+            <footer>
+                &copy; 2024 MiSitio. Todos los derechos reservados.
+            </footer>
+        
+        
+        
+            <script src="/script.js">
+               
+            </script>
+        </body>
+        </html>
+        <div class="carousel-container">
+            <div id="carousel" class="carousel">
+                <!-- Carrusel dinámico -->
+            </div>
+        </div>
+    </main>
+    
+    <footer id="podcast-footer" class="podcast-footer">
+    <button id="close-player" class="close-button">×</button>
+    <div class="footer-content">
+        <h3 id="program-title"></h3>
+        <p id="program-description"></p>
+        <div id="season-list"></div>
+        <audio id="audio-player" controls></audio> <!-- IMPORTANTE -->
+    </div>
+</footer>
+    <script src="script.js">
+
+        
+    </script>
+</body>
+</html>

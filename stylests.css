@@ -1,0 +1,488 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+/* Navbar container */
+.navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px 20px;
+background-color: #B51717;
+color: white;
+}
+
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #B51717;
+        color: white;
+        }
+      
+}
+
+/* Logo */
+.navbar .logo {
+font-size: 1.5em;
+font-weight: bold;
+}
+
+/* Links */
+.navbar ul {
+list-style: none;
+margin: 0;
+padding: 0;
+display: flex;
+}
+
+.navbar ul li {
+margin: 0 15px;
+}
+
+.navbar ul li a {
+text-decoration: none;
+color: white;
+transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+color: #00bcd4;
+}
+
+/* Responsive menu icon */
+.menu-toggle {
+display: none;
+font-size: 1.5em;
+cursor: pointer;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+.navbar ul {
+display: none;
+flex-direction: column;
+background-color: #B51717;
+width: 100%;
+position: absolute;
+top: 60px;
+left: 0;
+padding: 10px 0;
+}
+
+.navbar ul.active {
+display: flex;
+}
+
+.menu-toggle {
+display: block;
+}
+}
+
+
+  
+    /* Main content */
+    .content {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url('https://images.unsplash.com/photo-1617458740103-101b37048afc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Replace with your image URL */
+        background-size: cover;
+        background-position: center;
+        height: 100vh; /* Ocupa toda la altura */
+        width: 100%;
+        display: none;
+    }
+    
+    /* Play button */
+    .play-button {
+        position: absolute;
+        font-size: 3em;
+        color: white;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        padding: 20px;
+        cursor: pointer;
+        transition: transform 0.3s, background 0.3s;
+    }
+    
+    .play-button:hover {
+        transform: scale(1.1);
+        background: rgba(0, 0, 0, 0.7);
+    }
+    
+    /* Live icon */
+    .live-icon {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 1em;
+        color: white;
+        background: red;
+        padding: 5px 10px;
+        border-radius: 20px;
+        animation: pulse 1.5s infinite;
+    }
+    
+    /* Pulse animation for the "En Vivo" icon */
+    @keyframes pulse {
+        0%, 100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.6;
+            transform: scale(1.1);
+        }
+    }
+    
+    /* Dates icon */
+    .dates-icon {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 1.5em;
+        color: white;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+@media screen and (max-width: 768px) {
+
+    
+    /* Main content */
+     .content {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url('https://images.unsplash.com/photo-1617458740103-101b37048afc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); 
+        background-color: green ;
+        z-index: -1;
+        height: 100vh;
+        overflow-x: hidden;
+       
+    }
+    
+    /* Play button */
+     .play-button {
+        position:fixed;
+        font-size: 3em;
+        color: white;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        padding: 20px;
+        cursor: pointer;
+        transition: transform 0.3s, background 0.3s;
+    } 
+    
+    /*.play-button:hover {
+        transform: scale(1.1);
+        background: rgba(0, 0, 0, 0.7);
+    } */
+    
+    /* Live icon */
+    .live-icon {
+        position: relative;
+        top: 100px;
+       
+        font-size: 1em;
+        color: white;
+        background: red;
+        padding: 5px 10px;
+        border-radius: 20px;
+        animation: pulse 1.5s infinite;
+    }
+    
+    /* Pulse animation for the "En Vivo" icon */
+    @keyframes pulse {
+        0%, 100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.6;
+            transform: scale(1.1);
+        }
+    }
+    
+    /* Dates icon */
+    .dates-icon {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 1.5em;
+        color: white;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+}
+
+
+/* Icon bar (mobile footer or desktop bar) */
+.icon-bar {
+background-color: #354f43;
+padding: 10px 0;
+display: flex;
+justify-content: center;
+gap: 15px;
+}
+
+.icon-bar a {
+width: 50px;
+height: 50px;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 50%;
+color: white;
+text-decoration: none;
+font-size: 1.5em;
+transition: transform 0.3s, box-shadow 0.3s;
+
+}
+
+/* Icon colors */
+.icon-bar a.whatsapp { background-color: #25D366; }
+.icon-bar a.facebook { background-color: #4267B2; }
+.icon-bar a.podcastt { background-color: #F50; }
+.icon-bar a.youtube { background-color: #FF0000; }
+.icon-bar a.bible { background-color: #8B4513; }
+
+/* Icon hover effect */
+.icon-bar a:hover {
+transform: scale(1.1);
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+footer {
+background-color: #333;
+color: white;
+text-align: center;
+padding: 10px 20px;
+font-size: 0.9em;
+display: block;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+.icon-bar {
+position: fixed;
+bottom: 0;
+left: 0;
+padding: 15px 0;
+background-color: #B51717; /* Footer-style background */
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 100%;
+
+}
+
+.icon-bar a {
+color: white; /* Ensure icons remain visible */
+
+width: 50px;
+height: 50px;
+border-radius: 20%;
+color: white;
+text-decoration: none;
+font-size: 1.5em;
+transition: transform 0.3s, box-shadow 0.3s;
+}
+
+footer { display: none; } /* Hide footer in mobile */
+
+}
+
+@media screen and (min-width: 768px) {
+.icon-bar {
+position: static;
+padding: 10px 0;
+background-color: #ac4646; /* Desktop-style background */
+
+}
+
+footer { display: block; } /* Show footer in desktop */
+} 
+
+@media screen and (min-width: 768px) {
+    footer{
+         background-color: rgb(36, 35, 49);
+    }
+}
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.podcast {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 20px;
+}
+
+.podcast img {
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.details {
+    flex: 1;
+}
+
+.details h3 {
+    margin: 0 0 10px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.details p {
+    margin: 5px 0;
+    color: #666;
+}
+
+audio {
+    width: 100%;
+    margin-top: 10px;
+} 
+
+
+
+
+
+@media screen and (max-width: 768px) {
+
+
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background: #fff;
+        background-color: #25D366;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: none;
+
+    }
+
+}
+
+
+/* Carrusel */
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    width: 50%;
+    overflow: hidden;
+}
+
+#carousel {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform; /* Mejora el rendimiento del movimiento */
+}
+
+.carousel-item {
+    width: 100%; /* Ajusta el tamaño mínimo de los ítems */
+    flex: 0 0 auto;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.carousel-item img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.carousel-item h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #333;
+}
+
+.carousel-item p {
+    font-size: 0.9rem;
+    color: #666;
+    padding: 0 10px;
+}
+
+.mas {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .mas a {
+    display: inline-block;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #B51717;
+    text-decoration: none;
+    position: relative;
+    padding: 10px 20px;
+    background-color: #fff;
+    border: 2px solid #B51717;
+    border-radius: 30px;
+    transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .mas a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #B51717;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+    transform: scale(0);
+    z-index: -1;
+  }
+  
+  .mas a:hover {
+    color: #fff; /* Cambiar color de texto al pasar el ratón */
+    background-color: #B51717; /* Fondo rojo */
+    transform: translateY(-5px); /* Movimiento hacia arriba */
+  }
+  
+  .mas a:hover::before {
+    transform: scale(1); /* Mostrar el fondo */
+  }
+  
+  @media screen and (max-width: 768px) {
+
+    .mas {
+        display: none;
+      }
+  
+
+}
