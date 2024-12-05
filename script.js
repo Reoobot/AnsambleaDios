@@ -96,7 +96,7 @@ function displayPodcasts(data) {
 fetchPodcasts();
 function playAudio() {
     console.log('Botón de reproducción clickeado');
-    const audio = new Audio('https://reoobot.github.io/RadiOline/La%20bendici%C3%B3n%20%E2%94%82%20Elevation%20Worship%20(COVER)%20Espa%C3%B1ol%20BetEl%20al%20Mundo%20e%20invitados.mp3'); // Reemplaza con la URL de tu audio
+    const audio = new Audio('https://passion-unable-condition-mesh.trycloudflare.com/stream'); // Reemplaza con la URL de tu audio
     audio.play().then(() => {
         console.log('Reproducción de audio iniciada');
     }).catch((error) => {
