@@ -1,35 +1,33 @@
-// Función para cargar los podcasts
 async function fetchPodcasts() {
-    const url = "https://reoobot.github.io/PostcaData/data.json"; // URL del archivo JSON
+    const url = "https://reoobot.github.io/PostcaData/data.json"; 
     try {
         const response = await fetch(url);
         if (!response.ok) {
             throw new Error(`Error al cargar los datos: ${response.status}`);
         }
         const data = await response.json();
-        displayPodcasts(data); // Mostrar los podcasts
+        displayPodcasts(data);
     } catch (error) {
         console.error("Error al cargar los podcasts:", error);
         document.getElementById("podcast-list").textContent = "Error al cargar los podcasts.";
     }
 }
 
-// Función para mostrar los podcasts en el carrusel
+
 function displayPodcasts(data) {
     const carousel = document.getElementById("carousel");
-    carousel.innerHTML = ""; // Limpiar contenido previo
+    carousel.innerHTML = ""; 
 
     if (Array.isArray(data)) {
         data.forEach(podcast => {
             const item = document.createElement("div");
-            item.className = "carousel-item"; // Clase para cada ítem del carrusel
+            item.className = "carousel-item"; 
 
-            // Verificar si hay una imagen y usarla
+          
             const img = document.createElement("img");
-            img.src = `https://reoobot.github.io/PostcaData${podcast.img}`; // Ruta de la imagen
+            img.src = `https://reoobot.github.io/PostcaData${podcast.img}`; 
             img.alt = podcast.name;
 
-            // Crear el contenedor de los detalles del podcast
             const details = document.createElement("div");
             details.className = "details";
 
@@ -42,9 +40,9 @@ function displayPodcasts(data) {
             details.appendChild(title);
             details.appendChild(description);
 
-            // Añadir eventos al hacer clic en el podcast
+        
             item.addEventListener("click", () => {
-                showPodcastDetails(podcast); // Mostrar detalles del podcast
+                showPodcastDetails(podcast); 
             });
 
             item.appendChild(img);
@@ -52,13 +50,13 @@ function displayPodcasts(data) {
             carousel.appendChild(item);
         });
 
-        startCarouselAnimation(); // Iniciar animación del carrusel
+        startCarouselAnimation(); 
     } else {
         document.getElementById("podcast-list").textContent = "No hay podcasts disponibles.";
     }
 }
 
-// Función para mostrar los detalles de un podcast cuando se hace clic en él
+
 function showPodcastDetails(podcast) {
     const footer = document.getElementById("podcast-footer");
     const title = document.getElementById("program-title");
@@ -66,12 +64,12 @@ function showPodcastDetails(podcast) {
     const seasonList = document.getElementById("season-list");
     const audioPlayer = document.getElementById("audio-player");
 
-    // Mostrar título y descripción del podcast
+   
     title.textContent = podcast.name;
     description.textContent = podcast.description;
-    seasonList.innerHTML = ""; // Limpiar lista de temporadas
+    seasonList.innerHTML = ""; 
 
-    // Mostrar temporadas y episodios
+ 
     podcast.seasons.forEach(season => {
         const seasonDiv = document.createElement("div");
         seasonDiv.className = "season";
@@ -91,11 +89,10 @@ function showPodcastDetails(podcast) {
                 </div>
             `;
 
-            // Reproducir el episodio al hacer clic
             episodeDiv.addEventListener("click", () => {
-                audioPlayer.src = `https://reoobot.github.io/PostcaData${episode.audio}`; // Reemplazar la fuente de audio
-                audioPlayer.load(); // Cargar el nuevo audio
-                audioPlayer.play(); // Reproducir automáticamente
+                audioPlayer.src = `https://reoobot.github.io/PostcaData${episode.audio}`; 
+                audioPlayer.load(); 
+                audioPlayer.play(); 
             });
 
             seasonDiv.appendChild(episodeDiv);
@@ -104,11 +101,11 @@ function showPodcastDetails(podcast) {
         seasonList.appendChild(seasonDiv);
     });
 
-    // Hacer visible el pie de página
+   
     footer.style.display = "flex";
 }
 
-// Función para iniciar la animación del carrusel (moverse automáticamente)
+
 let currentIndex = 0;
 function startCarouselAnimation() {
     const carousel = document.getElementById("carousel");
@@ -117,23 +114,23 @@ function startCarouselAnimation() {
     setInterval(() => {
         if (items.length === 0) return;
         const totalItems = items.length;
-        const itemWidth = items[0].offsetWidth + 20; // Ajuste para el espaciado
+        const itemWidth = items[0].offsetWidth + 20; 
         const newTransform = -(currentIndex * itemWidth);
 
         carousel.style.transform = `translateX(${newTransform}px)`;
         currentIndex = (currentIndex + 1) % totalItems;
-    }, 2000); // 5 segundos de intervalo
+    }, 2000); 
 }
 
-// Función para cerrar el pie de página (reproductor)
+
 document.getElementById("close-player").addEventListener("click", () => {
     document.getElementById("podcast-footer").style.display = "none";
 });
 
-// Llamada inicial para cargar los podcasts
+
 fetchPodcasts();
 
-// Toggle menu visibility
+
 const toggle = document.getElementById('menu-toggle');
 const navLinks = document.getElementById('nav-links');
 

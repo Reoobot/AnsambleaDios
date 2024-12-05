@@ -1,8 +1,5 @@
-// script.js
-
-// Función para cargar los podcasts
 async function fetchPodcasts() {
-    const url = "https://reoobot.github.io/PostcaData/data.json"; // URL de la API
+    const url = "https://reoobot.github.io/PostcaData/data.json"; 
     try {
         const response = await fetch(url);
         if (!response.ok) {
@@ -16,22 +13,22 @@ async function fetchPodcasts() {
     }
 }
 
-// Función para mostrar los podcasts en el carrusel
+
 function displayPodcasts(data) {
     const carousel = document.getElementById("carousel");
-    carousel.innerHTML = ""; // Limpiar contenido previo
+    carousel.innerHTML = "";
 
     if (Array.isArray(data)) {
         data.forEach(podcast => {
             const item = document.createElement("div");
-            item.className = "carousel-item"; // Clase para cada ítem del carrusel
+            item.className = "carousel-item"; 
 
-            // Verificar si hay una imagen y usarla
+   
             const img = document.createElement("img");
-            img.src = `https://reoobot.github.io/PostcaData${podcast.img}`; // Ruta de la imagen
+            img.src = `https://reoobot.github.io/PostcaData${podcast.img}`; 
             img.alt = podcast.name;
 
-            // Crear el contenedor de los detalles del podcast
+        
             const details = document.createElement("div");
             details.className = "details";
 
@@ -44,9 +41,8 @@ function displayPodcasts(data) {
             details.appendChild(title);
             details.appendChild(description);
 
-            // Añadir eventos al hacer clic en el podcast
             item.addEventListener("click", () => {
-                showPodcastDetails(podcast); // Mostrar detalles del podcast
+                showPodcastDetails(podcast); 
             });
 
             item.appendChild(img);
@@ -54,15 +50,15 @@ function displayPodcasts(data) {
             carousel.appendChild(item);
         });
 
-        startCarouselAnimation(); // Iniciar animación del carrusel
+        startCarouselAnimation(); 
     } else {
         document.getElementById("podcast-list").textContent = "No hay podcasts disponibles.";
     }
 }
-// Función para mostrar los podcasts
+
 function displayPodcasts(data) {
     const podcastList = document.getElementById("podcast-list");
-    podcastList.innerHTML = ""; // Limpiar contenido previo
+    podcastList.innerHTML = ""; 
 
     if (data && Array.isArray(data)) {
         data.forEach(podcast => {
@@ -97,11 +93,7 @@ function displayPodcasts(data) {
         podcastList.textContent = "No hay podcasts disponibles.";
     }
 }
-
-// Llamar a la función al cargar la página
 fetchPodcasts();
-
-// Función para el botón de reproducción (play button)
 function playAudio() {
     console.log('Botón de reproducción clickeado');
     const audio = new Audio('https://reoobot.github.io/RadiOline/La%20bendici%C3%B3n%20%E2%94%82%20Elevation%20Worship%20(COVER)%20Espa%C3%B1ol%20BetEl%20al%20Mundo%20e%20invitados.mp3'); // Reemplaza con la URL de tu audio
@@ -111,49 +103,43 @@ function playAudio() {
         console.error('Error al reproducir el audio:', error);
     });
 }
-
-// Crear un reproductor de audio global
 const audioPlayer = new Audio();
-let isPlaying = false; // Estado de reproducción
-let currentSrc = ""; // Fuente actual en reproducción
+let isPlaying = false;
+let currentSrc = ""; 
 
 function playAudio() {
-    const button = event.currentTarget; // Obtener el botón que fue clickeado
-    const audioSrc = button.getAttribute('data-audio-src'); // Obtener la fuente del audio desde un atributo personalizado
+    const button = event.currentTarget; 
+    const audioSrc = button.getAttribute('data-audio-src'); 
 
     if (!audioSrc) {
         console.error("No se encontró una fuente de audio en el botón.");
         return;
     }
 
-    // Si el audio ya está reproduciéndose y es el mismo, detenerlo
+
     if (isPlaying && currentSrc === audioSrc) {
         audioPlayer.pause();
         isPlaying = false;
         console.log("Audio pausado");
-        button.innerHTML = '<i class="fas fa-play"></i>'; // Cambiar ícono a "play"
+        button.innerHTML = '<i class="fas fa-play"></i>'; 
     } else {
-        // Si es una nueva fuente o el audio está detenido, reiniciar
+     
         audioPlayer.src = audioSrc;
         audioPlayer.play();
         isPlaying = true;
         currentSrc = audioSrc;
         console.log("Reproducción iniciada");
-        button.innerHTML = '<i class="fas fa-pause"></i>'; // Cambiar ícono a "pausa"
+        button.innerHTML = '<i class="fas fa-pause"></i>'; 
     }
 
-    // Agregar evento para manejar el fin de la reproducción
+
     audioPlayer.onended = () => {
         isPlaying = false;
-        button.innerHTML = '<i class="fas fa-play"></i>'; // Cambiar ícono a "play" al finalizar
+        button.innerHTML = '<i class="fas fa-play"></i>'; 
         console.log("Reproducción terminada");
     };
 }
 
-
-
-
-// Toggle menu visibility
 const toggle = document.getElementById('menu-toggle');
 const navLinks = document.getElementById('nav-links');
 
