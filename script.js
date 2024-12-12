@@ -96,7 +96,7 @@ function displayPodcasts(data) {
 fetchPodcasts();
 function playAudio() {
     console.log('Botón de reproducción clickeado');
-    const audio = new Audio('https://templates-completion-convergence-certificates.trycloudflare.com/stream'); // Reemplaza con la URL de tu audio
+    const audio = new Audio('https://compiler-pattern-ol-auburn.trycloudflare.com/stream'); // Reemplaza con la URL de tu audio
     audio.play().then(() => {
         console.log('Reproducción de audio iniciada');
     }).catch((error) => {
