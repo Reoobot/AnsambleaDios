@@ -6,7 +6,7 @@ body {
     box-sizing: border-box;
 }
 
-                                  /* Navbar container */
+/* Navbar container */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -28,13 +28,13 @@ body {
 
 }
 
-                                    /* Logo */
+/* Logo */
 .navbar .logo {
     font-size: 1.5em;
     font-weight: bold;
 }
 
-                                   /* Links */
+/* Links */
 .navbar ul {
     list-style: none;
     margin: 0;
@@ -56,14 +56,14 @@ body {
     color: #00bcd4;
 }
 
-                                    /* Responsive menu icon */
+/* Responsive menu icon */
 .menu-toggle {
     display: none;
     font-size: 1.5em;
     cursor: pointer;
 }
 
-                                     /* Responsive styles */
+/* Responsive styles */
 @media screen and (max-width: 768px) {
     .navbar ul {
         display: none;
@@ -86,7 +86,7 @@ body {
     }
 }
 
-                                  /* Main content */
+/* Main content */
 .content {
     position: relative;
     display: flex;
@@ -99,7 +99,7 @@ body {
     width: 100%;
 }
 
-                                /* Play button */
+/* Play button */
 .play-button {
     position: absolute;
     font-size: 3em;
@@ -110,12 +110,13 @@ body {
     cursor: pointer;
     transition: transform 0.3s, background 0.3s;
 }
+
 .play-button:hover {
     transform: scale(1.1);
     background: rgba(0, 0, 0, 0.7);
 }
 
-                                /* Live icon */
+/* Live icon */
 .live-icon {
     position: absolute;
     top: 10px;
@@ -128,7 +129,7 @@ body {
     animation: pulse 1.5s infinite;
 }
 
-                                /* Pulse animation for the "En Vivo" icon */
+/* Pulse animation for the "En Vivo" icon */
 @keyframes pulse {
 
     0%,
@@ -143,33 +144,69 @@ body {
     }
 }
 
-                                /* Dates icon */
+/* Dates icon */
 .dates-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: absolute;
     top: 10px;
     left: 10px;
     font-size: 1.5em;
     color: white;
-    background: rgba(0, 0, 0, 0.5);
+    text-decoration: none;
     padding: 10px;
-    border-radius: 50%;
+    border-radius: 20%;
     cursor: pointer;
 }
 
+span {
+    font-size: 1rem;
+    font-family: "Amatic SC", serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2.2rem;
+    color: #fff;
+    text-shadow:
+        0 0 5px #102e88,
+        0 0 10px #ff4000,
+        0 0 20px #923f2a,
+        0 0 40px #00ff00;
+    margin-bottom: 310px;
+    text-align: center;
+}
+
+.luz {
+    font-size: 1rem;
+    font-family: "Amatic SC", serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.5rem;
+    color: #fff;
+    text-shadow:
+        0 0 5px #00ff00,
+        0 0 10px #00ff00,
+        0 0 20px #00ff00,
+        0 0 40px #00ff00;
+    margin-bottom: 350px;
+    text-align: center;
+
+}
+
 @media screen and (max-width: 768px) {
-                                      /* Main content */
+
     .content {
         position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
         background-image: url('https://images.unsplash.com/photo-1617458740103-101b37048afc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-        background-color: green;
+        background-color: rgb(18, 21, 18);
         height: 100vh;
         overflow-x: hidden;
     }
 
-                        /* Play button */
+    /* Play button */
     .play-button {
         position: absolute;
         font-size: 3em;
@@ -180,12 +217,13 @@ body {
         cursor: pointer;
         transition: transform 0.3s, background 0.3s;
     }
+
     .play-button:hover {
         transform: scale(1.1);
         background: rgba(0, 0, 0, 0.7);
     }
 
-                        /* Live icon */
+    /* Live icon */
     .live-icon {
         position: absolute;
         width: 70px;
@@ -199,35 +237,38 @@ body {
         animation: pulse 1.5s infinite;
     }
 
-                                /* Pulse animation for the "En Vivo" icon */
+    /* Pulse animation for the "En Vivo" icon */
     @keyframes pulse {
+
         0%,
         100% {
             opacity: 1;
             transform: scale(1);
         }
+
         50% {
             opacity: 0.6;
             transform: scale(1.1);
         }
     }
 
-                        /* Dates icon */
+    /* Dates icon */
     .dates-icon {
         position: absolute;
         top: 10px;
         left: 10px;
         font-size: 1.5em;
         color: white;
-        background: rgba(0, 0, 0, 0.5);
         padding: 10px;
         border-radius: 50%;
         cursor: pointer;
+
+
     }
 }
 
 
-                            /* Icon bar (mobile footer or desktop bar) */
+/* Icon bar (mobile footer or desktop bar) */
 .icon-bar {
     background-color: #354f43;
     padding: 10px 0;
@@ -250,7 +291,7 @@ body {
 
 }
 
-                            /* Icon colors */
+/* Icon colors */
 .icon-bar a.whatsapp {
     background-color: #25D366;
 }
@@ -271,13 +312,13 @@ body {
     background-color: #8B4513;
 }
 
-                        /* Icon hover effect */
+/* Icon hover effect */
 .icon-bar a:hover {
     transform: scale(1.1);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-                        /* Footer */
+/* Footer */
 footer {
     background-color: #333;
     color: white;
@@ -287,7 +328,7 @@ footer {
     display: block;
 }
 
-                    /* Responsive styles */
+/* Responsive styles */
 @media screen and (max-width: 768px) {
     .icon-bar {
         position: fixed;
