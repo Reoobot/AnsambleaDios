@@ -96,9 +96,11 @@ function displayPodcasts(data) {
 fetchPodcasts();
 function playAudio() {
     console.log('Botón de reproducción clickeado');
-    const audio = new Audio('https://converted-larry-assuming-brunette.trycloudflare.com/asamblea');
+    const audio = new Audio('https://upgrading-flush-holdem-indianapolis.trycloudflare.com/asamblea'); 
     audio.play().then(() => {
         console.log('Reproducción de audio iniciada');
+        console.log(audio);
+        
     }).catch((error) => {
         console.error('Error al reproducir el audio:', error);
     });
