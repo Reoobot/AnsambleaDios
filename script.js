@@ -96,7 +96,7 @@ function displayPodcasts(data) {
 fetchPodcasts();
 function playAudio() {
     console.log('Botón de reproducción clickeado');
-    const audio = new Audio('https://cream-boards-criminal-diff.trycloudflare.com/radiocristiana'); 
+    const audio = new Audio('https://approve-johnny-him-explore.trycloudflare.com/radiocristiana'); 
     audio.play().then(() => {
         console.log('Reproducción de audio iniciada');
         console.log(audio);
