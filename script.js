@@ -96,7 +96,7 @@ function displayPodcasts(data) {
 fetchPodcasts();
 function playAudio() {
     console.log('Botón de reproducción clickeado');
-    const audio = new Audio('https://approve-johnny-him-explore.trycloudflare.com/radiocristiana'); 
+    const audio = new Audio('https://representatives-unlimited-bear-absolute.trycloudflare.com/radiocristiana'); 
     audio.play().then(() => {
         console.log('Reproducción de audio iniciada');
         console.log(audio);
